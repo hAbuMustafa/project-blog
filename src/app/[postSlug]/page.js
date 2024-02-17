@@ -6,6 +6,7 @@ import BlogHero from '@/components/BlogHero';
 import styles from './postSlug.module.css';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { loadBlogPost } from '@/helpers/file-helpers';
+import { BLOG_TITLE } from '@/constants';
 import CodeSnippet from '@/components/CodeSnippet';
 
 const DivisionGroupsDemo = dynamic(() => import('@/components/DivisionGroupsDemo'));
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }) {
   const post = await loadBlogPost(params.postSlug);
 
   return {
-    title: post.frontmatter.title,
+    title: `${post.frontmatter.title} • ${BLOG_TITLE}`,
     description: post.frontmatter.abstract,
   };
 }
