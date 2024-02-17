@@ -1,4 +1,5 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
 
 import BlogHero from '@/components/BlogHero';
 
@@ -10,6 +11,10 @@ import { COMPONENTS_MAP } from '@/helpers/components-map';
 
 export async function generateMetadata({ params }) {
   const post = await loadBlogPost(params.postSlug);
+
+  if (!post) {
+    notFound();
+  }
 
   return {
     title: `${post.frontmatter.title} • ${BLOG_TITLE}`,

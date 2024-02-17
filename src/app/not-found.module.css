@@ -1,0 +1,6 @@
+.error_wrapper {
+  height: 40vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
