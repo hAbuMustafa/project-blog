@@ -1,4 +1,7 @@
 export const BLOG_TITLE = 'Bits & Bytes';
+export const BLOG_DESCRIPTION = 'A wonderful blog about JavaScript';
+export const BLOG_AUTHOR = 'Hosam Sultan';
+
 export const THEME_COOKIE_NAME = 'color-theme';
 
 export const LIGHT_COLORS = {
