@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
   const post = await loadBlogPost(params.postSlug);
 
   if (!post) {
-    notFound();
+    return null;
   }
 
   return {
@@ -23,6 +23,8 @@ export async function generateMetadata({ params }) {
 
 async function Blog({ slug }) {
   const post = await loadBlogPost(slug);
+
+  if (!post) notFound();
 
   return (
     <>
